@@ -2,31 +2,84 @@
 title: "Quickstart"
 ---
 
-Morphosis is licensed crypto payment infrastructure for regulated businesses.
+Morphosis provides licensed crypto payment infrastructure for regulated businesses.
 
-This quickstart gives developers the basic integration path for working with Morphosis.
+This quickstart is for operators, platforms, PSPs, and technical teams evaluating how to integrate Morphosis for crypto pay-ins, payouts, settlement, and reconciliation.
 
-## Integration flow
+Use this page first. It explains the integration path and points your team to the right section of the documentation.
 
-1. Get API credentials from the Morphosis team.
-2. Authenticate API requests.
-3. Create a pay-in or payout flow.
-4. Listen for webhook events.
-5. Reconcile transaction status.
-6. Move to production.
+## What Morphosis supports
+
+Morphosis helps regulated businesses:
+
+- Accept crypto pay-ins
+
+- Send crypto payouts
+
+- Convert volatile crypto deposits to stablecoin
+
+- Settle crypto flows through fiat rails
+
+- Reconcile transaction activity across supported networks
+
+Production access is provided through the Morphosis onboarding process. Your Morphosis contact will confirm API credentials, available environments, supported assets, supported networks, webhook configuration, and go-live requirements.
+
+## Where to find the information you need
+
+| Need | Where to go |
+
+| --- | --- |
+
+| Understand the integration flow | Quickstart |
+
+| Review API endpoints and schemas | API Reference |
+
+| Configure callbacks and event handling | Webhooks |
+
+| Plan an iGaming operator integration | iGaming Quickstart |
+
+| Check uptime or incidents | Status |
+
+| Start onboarding or request access | Speak to an expert on [morphosis.com](http://morphosis.com) |
+
+## Standard integration path
+
+1. Confirm the pay-in, payout, settlement, or reconciliation flow with Morphosis.
+
+2. Receive API credentials and environment details from the Morphosis team.
+
+3. Review the API reference for endpoint behavior, request schemas, response schemas, and error handling.
+
+4. Configure your webhook endpoint.
+
+5. Build the pay-in or payout flow inside your operator, platform, or PSP backend.
+
+6. Test webhook handling, duplicate-event protection, and reconciliation logic.
+
+7. Complete production approval with Morphosis.
+
+8. Move to production.
 
 ## Before you start
 
-You will need:
+Have the following ready:
 
-- API credentials
-- A configured webhook endpoint
-- The correct environment details
-- Approval to access production APIs
+- Legal entity and operating jurisdiction
 
-## Next steps
+- Primary technical contact
 
-- Review the API reference.
-- Read the webhooks guide.
-- Follow the iGaming quickstart.
-- Check system status.
+- Compliance or risk contact
+
+- Expected pay-in and payout flows
+
+- Required assets and networks
+
+- Webhook endpoint URL
+
+- Settlement and reconciliation requirements
+
+## API reference
+
+The API reference will be generated from the Morphosis OpenAPI specification.
+
+Until the API reference is live, your Morphosis contact will provide the current integration details directly.

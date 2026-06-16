@@ -2,20 +2,64 @@
 title: "Webhooks"
 ---
 
-Morphosis sends webhooks to notify your system when payment events happen.
+Morphosis uses webhooks to notify your system when transaction status changes.
 
-## What webhooks are used for
+Operators should use webhooks for asynchronous payment updates, payout updates, and reconciliation events. Your system should also keep its own internal ledger and reconcile final transaction state against Morphosis records.
 
-Webhooks can notify your system when a transaction is created, confirmed, failed, settled, or otherwise updated.
+## How operators should use webhooks
+
+Use webhooks to:
+
+- Receive pay-in status updates
+
+- Receive payout status updates
+
+- Update internal transaction records
+
+- Trigger player or customer balance updates
+
+- Support finance and reconciliation workflows
+
+- Alert internal teams when a transaction requires review
 
 ## Idempotency
 
-Your system should treat webhook events as idempotent.
+Your webhook handler must be idempotent.
 
-That means if the same webhook is delivered more than once, your system should not process the same event twice.
+That means if the same webhook is delivered more than once, your system should process it once and ignore duplicates.
 
-Store the webhook event ID and ignore duplicates.
+At minimum, your system should:
+
+- Store the Morphosis event ID or transaction identifier
+
+- Check whether the event has already been processed
+
+- Avoid crediting a player or customer balance twice
+
+- Avoid sending the same payout twice
+
+- Log every received event for audit and reconciliation
+
+## Webhook endpoint requirements
+
+Your webhook endpoint should:
+
+- Use HTTPS
+
+- Accept POST requests
+
+- Return a 2xx response only after your system has accepted the event
+
+- Log the event payload and timestamp
+
+- Handle retries safely
+
+- Verify signatures once Morphosis provides the signing method
+
+- Alert your team when webhook delivery fails repeatedly
 
 ## Event catalog
 
-The final event names, payload examples, retry rules, and signature verification method will be added once engineering provides the confirmed webhook specification.
+The final event names, payload examples, retry rules, and signature verification method will be added once the engineering-confirmed webhook specification is available.
+
+Do not build against placeholder event names. Use the confirmed API reference and webhook catalog before production.

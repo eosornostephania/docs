@@ -2,46 +2,106 @@
 title: "iGaming Quickstart"
 ---
 
-This guide explains how an iGaming operator or platform can integrate Morphosis for crypto pay-ins and payouts.
+This guide is for iGaming operators and platform integrators evaluating Morphosis for crypto pay-ins, payouts, and settlement.
 
-## Example pay-in flow
+Morphosis is operator-independent crypto payment infrastructure. We are not captive to a platform group, and we are designed to support regulated operators, PSPs, and platform partners that need clear payment flows, reliable reconciliation, and transparent counterparty risk.
 
-1. Player chooses crypto deposit.
+## Who this guide is for
 
-2. Operator creates a deposit request.
+Use this guide if you are:
 
-3. Morphosis generates or monitors the payment flow.
+- An iGaming operator adding crypto deposits or payouts
 
-4. Player sends funds.
+- A platform integrator supporting multiple operators
 
-5. Morphosis confirms the transaction.
+- A PSP evaluating crypto payment infrastructure
 
-6. Operator receives a webhook.
+- A CTO or product lead planning the integration
 
-7. Operator credits the player balance.
+- A compliance or finance team reviewing the payment flow
 
-## Example payout flow
+## Pay-in flow
 
-1. Operator creates a payout request.
+A typical operator pay-in flow looks like this:
 
-2. Morphosis validates the destination and network.
+1. The player chooses crypto deposit in the operator cashier.
 
-3. Morphosis sends the payout.
+2. The operator backend starts the deposit flow through Morphosis.
 
-4. Operator receives status updates by webhook.
+3. Morphosis provides the payment instructions required for the transaction.
 
-5. Operator reconciles final settlement.
+4. The player sends funds on the supported network.
+
+5. Morphosis monitors the transaction.
+
+6. Morphosis sends a webhook when the transaction status changes.
+
+7. The operator updates the player balance only after the required confirmation state is reached.
+
+8. The operator stores the Morphosis transaction reference for reconciliation.
+
+## Payout flow
+
+A typical operator payout flow looks like this:
+
+1. The operator approves the payout inside its own system.
+
+2. The operator backend starts the payout flow through Morphosis.
+
+3. Morphosis validates the payout request according to the agreed configuration.
+
+4. Morphosis processes the payout on the supported network.
+
+5. Morphosis sends status updates by webhook.
+
+6. The operator updates the payout record.
+
+7. Finance reconciles final payout state against Morphosis records.
+
+## Information operators need before build
+
+Before starting implementation, confirm the following with Morphosis:
+
+- Supported assets
+
+- Supported networks
+
+- Sandbox or test environment details
+
+- Production access requirements
+
+- API credentials
+
+- Webhook endpoint requirements
+
+- Settlement currency and settlement process
+
+- Reconciliation requirements
+
+- Compliance review requirements
 
 ## Go-live checklist
 
-- API credentials confirmed
+Before production, confirm that:
 
-- Webhook endpoint configured
+- API credentials are active
 
-- Signature verification implemented
+- The correct environment is configured
 
-- Duplicate webhook handling implemented
+- Webhook delivery has been tested
 
-- Sandbox testing completed
+- Duplicate webhook handling is implemented
 
-- Production approval received
+- Internal ledger updates are idempotent
+
+- Pay-in and payout test cases are complete
+
+- Finance has confirmed reconciliation requirements
+
+- Compliance has completed production approval
+
+- Morphosis has approved the production launch
+
+## API reference
+
+The API reference will define the exact endpoints, request schemas, response schemas, webhook payloads, and error codes once the OpenAPI specification is live.
