@@ -7,19 +7,25 @@
     "primary": "#6B1FAF"
   },
   "navigation": {
-    "groups": [
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Documentation",
+          "icon": "book-open-cover",
+          "href": "https://mintlify.com/docs"
+        }
+      ]
+    },
+    "pages": [
       {
-        "group": "Get started",
-        "pages": ["index"]
-      },
-      {
-        "group": "Guides",
+        "group": "Getting Started",
         "pages": [
-          "webhooks",
-          "guides/igaming-quickstart",
-          "status"
+          "index"
         ]
-      }
+      },
+      "webhooks",
+      "i-gaming-quickstart",
+      "status"
     ]
   },
   "navbar": {
