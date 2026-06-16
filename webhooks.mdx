@@ -1,0 +1,24 @@
+---
+title: "Webhooks"
+description: "Understand Morphosis webhook events and delivery behavior."
+---
+
+# Webhooks
+
+Morphosis sends webhooks to notify your system when payment events happen.
+
+## What webhooks are used for
+
+Webhooks can notify your system when a transaction is created, confirmed, failed, settled, or otherwise updated.
+
+## Idempotency
+
+Your system should treat webhook events as idempotent.
+
+That means if the same webhook is delivered more than once, your system should not process the same event twice.
+
+Store the webhook event ID and ignore duplicates.
+
+## Event catalog
+
+The final event names, payload examples, retry rules, and signature verification method will be added once engineering provides the confirmed webhook specification.
