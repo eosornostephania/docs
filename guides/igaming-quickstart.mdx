@@ -1,0 +1,35 @@
+---
+title: "iGaming Quickstart"
+description: "A one-day integration story for iGaming operators and platforms."
+---
+
+# iGaming Quickstart
+
+This guide explains how an iGaming operator or platform can integrate Morphosis for crypto pay-ins and payouts.
+
+## Example pay-in flow
+
+1. Player chooses crypto deposit.
+2. Operator creates a deposit request.
+3. Morphosis generates or monitors the payment flow.
+4. Player sends funds.
+5. Morphosis confirms the transaction.
+6. Operator receives a webhook.
+7. Operator credits the player balance.
+
+## Example payout flow
+
+1. Operator creates a payout request.
+2. Morphosis validates the destination and network.
+3. Morphosis sends the payout.
+4. Operator receives status updates by webhook.
+5. Operator reconciles final settlement.
+
+## Go-live checklist
+
+- API credentials confirmed
+- Webhook endpoint configured
+- Signature verification implemented
+- Duplicate webhook handling implemented
+- Sandbox testing completed
+- Production approval received
